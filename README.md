@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# 🏆 Oscar Films — React + TMDB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Каталог фильмов: популярные, поиск, детальная страница, актёры и фильмография, «избранное» (сохраняется в `localStorage`), ленивая подгрузка.
 
-## Available Scripts
 
-In the project directory, you can run:
+## ✨ Возможности
+- 🔎 Поиск по названию (TMDB Search API)
+- 🎬 Популярные фильмы на главной (TMDB Popular)
+- 🧾 Детальная страница: постер, описание, рейтинг
+- 👤 Персоны: страница актёра + фильмография
+- ⭐ Избранное (добавить/удалить, хранится в `localStorage`)
+- ⏳ Ленивая подгрузка — «Загрузить ещё»
 
-### `npm start`
+## 🧰 Стек
+**React (CRA)** · **React Router** · **Axios** · **TMDB API**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎥 Видео-обзор
 
-### `npm run build`
+Смотри обзор проекта на YouTube:  
+➡️ [Oscar Films Demo](https://youtu.be/eLsnTCbi5_U)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 🚀 Быстрый старт
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1) Требования
+- Node **18+** (рекомендовано LTS 20)
+- Аккаунт TMDB и **API Key (v3 auth)**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2) Установка
+```bash
+git clone https://github.com/Yuliia9009/Oscar-films.git
+cd Oscar-films
+npm i
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3) Переменные окружения
+Создайте файл **`.env`** в корне проекта:
+```bash
+REACT_APP_THEMOVIEDB_KEY=<ВАШ_TMDB_API_KEY>
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Важно:** добавьте `.env` в `.gitignore`.
 
-## Learn More
+### 4) Запуск dev-сервера
+```bash
+npm start
+```
+Откроется `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 5) Продакшн-сборка
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔌 Используемые эндпоинты TMDB
 
-### Analyzing the Bundle Size
+- **Популярные:** `GET /movie/popular`
+- **Поиск:** `GET /search/movie`
+- **Детали фильма:** `GET /movie/{id}?append_to_response=videos,images`
+- **Актёры/съёмочная группа:** `GET /movie/{id}/credits`
+- **Персона:** `GET /person/{id}`, `GET /person/{id}/movie_credits`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧪 Скрипты npm
+```bash
+npm start       # запуск dev-сервера
+npm run build   # сборка на прод
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🙏 Благодарности
+- [TMDB](https://www.themoviedb.org/) за API и материалы.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 Лицензия
+MIT
